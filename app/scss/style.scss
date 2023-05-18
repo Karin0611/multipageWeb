@@ -37,6 +37,19 @@
     color: rgba(54, 56, 56, 0.9);
     line-height: 22px;
   }
+  &__list-link--active {
+    padding-bottom: 4px;
+    position: relative;
+    &::after {
+      content: '';
+      height: 2px;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      border-radius: 1px;
+      background-color: rgba($title, .7);
+    }
+  }
 }
 
 .footer {
@@ -224,6 +237,26 @@
   }
   &__image {
     max-width: 485px;
+  }
+}
+
+.breadcrumbs {
+  background: rgba(#DFDFDF, .5);
+  padding: 13px 14px;
+  &__list {
+    display: flex;
+  }
+  &__item::after {
+    content: '/';
+    margin-left: -4px;
+    margin-right: 4px;
+  }
+  &__item:last-child::after {
+    display: none;
+  }
+  &__link {
+    font-size: 14px;
+    color: $default;
   }
 }
 
@@ -467,5 +500,85 @@
   }
   &__item-text {
     margin-top: 13px;
+  }
+}
+
+.gallery {
+  padding: 80px 0 90px;
+  &__buttons {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  &__btn {
+    margin: 0 13px;
+    background-color: transparent;
+    border: 1px solid #454647;
+    border-radius: 20px;
+    padding: 6px 16px;
+    color: #8F8D8D;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+  .mixitup-control-active {
+    background-color: #FFEF35;
+    color: $title;
+    border: 1px solid #FFEF35;
+  }
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 30px 35px;
+  }
+  &__item:first-child {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+  &__item img {
+    object-fit: cover;
+    width: 100%;
+    max-height: 1150px;
+    height: 100%;
+  }
+}
+
+.blog-box {
+  padding-bottom: 100px;
+  &__title {
+    color: $title;
+    @extend %title-font;
+    font-size: 36px;
+    line-height: 51px;
+    margin: 0 auto 30px;
+    text-align: center;
+    max-width: 440px;
+  }
+  &__items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+  }
+  &__img-links {
+    margin-bottom: 19px;
+    display: inline-block;
+  }
+  &__links {
+    margin-bottom: 9px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #707070;
+  }
+  &__date,
+  &__author,
+  &__theme {
+    color: inherit;
+  }
+  &__item-title {
+    color: $title;
+    font-size: 24px;
+    line-height: 38px;
+    @extend %title-font;
   }
 }

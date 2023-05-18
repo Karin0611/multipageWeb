@@ -12,4 +12,10 @@ $(function () {
         fade: true,
         autoPlay: true
     });
+
+    var mixer = mixitup('.gallery__inner', {
+        load: {
+            filter: '.living'
+        }
+    });
 })
