@@ -202,7 +202,7 @@
   width: 100%;
   box-shadow: -2px 3px 17px 0 #000;
   transition: all .6s;
-  z-index: 5;
+  z-index: 15;
 
   &.rightside-menu--close {
     transform: translateX(500%);
@@ -261,7 +261,7 @@
   background: rgba(#DFDFDF, .5);
   padding: 13px 14px;
   position: relative;
-  z-index: 9999;
+  z-index: 10;
 
   &__list {
     display: flex;
@@ -974,7 +974,7 @@
     color: inherit;
   }
   &__tags {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
   }
   &__tags-link {
     font-weight: 600;
@@ -1064,6 +1064,25 @@
   }
 }
 
+.article-slider {
+  &__arrow {
+    padding: 0;
+    border: none;
+    background: transparent;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    cursor: pointer;
+  }
+  &__arrowleft {
+    left: 16px;
+  }
+  &__arrowright {
+    right: 16px;
+  }
+}
+
 .recent-posts {
   margin-bottom: 40px;
   &__title {
@@ -1114,6 +1133,198 @@
     top: 10px;
     right: 13px;
     cursor: pointer;
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__list {
+    display: flex;
+  }
+  &__arrow {
+    margin: 0 6px;
+  }
+  &__list-item {
+    margin: 0 6px;
+  }
+  &__arrow--disabled {
+    opacity: 0;
+    pointer-events: none;
+  }
+  &__list-num {
+    font-weight: 600;
+    font-size: 14px;
+    color: #707070;
+  }
+  &__list-num--active {
+    color: $title;
+  }
+}
+
+.blog-one__item {
+  p {
+    margin-bottom: 40px;
+  }
+  blockquote {
+    font-size: 24px;
+    font-weight: 300;
+    font-style: italic;
+    margin-bottom: 30px;
+    padding: 0 40px;
+    color: $title;
+  }
+  .blog__blockquote-author::before {
+    margin-right: auto;
+    margin-left: 0;
+  }
+}
+.blog-one {
+  &__tags-title {
+    font-size: 20px;
+    margin-bottom: 6px;
+    color: $title;
+    @extend %title-font;
+    line-height: 31px;
+  }
+  &__links {
+    padding: 40px 0 30px;
+    border-top: 1px solid #DFDFDF;
+    border-bottom: 1px solid #DFDFDF;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__link {
+    width: 243px;
+    position: relative;
+    color: #707070;
+    font-size: 14px;
+    font-weight: 600;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 12px;
+      height: 23px;
+    }
+  }
+  &__link-prev {
+    padding-left: 44px;
+    &::before {
+      background-image: url("../images/icons/arrow-prev.svg");
+      left: 0;
+    }
+  }
+  &__link-next {
+    padding-right: 44px;
+    text-align: right;
+    &::before {
+      background-image: url("../images/icons/arrow-next.svg");
+      right: 0;
+    }
+  }
+  &__comments-title {
+    color: $title;
+    @extend %title-font;
+    line-height: 31px;
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  &__comments-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 40px;
+  }
+  &__comments-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 13px;
+  }
+  &__reply {
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    margin-left: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #707070;
+  }
+  &__comments-name {
+    color: $title;
+    line-height: 23px;
+    @extend %title-font;
+  }
+  &__comments-date {
+    margin-bottom: 10px;
+    color: #a1a1a1;
+    font-size: 14px;
+  }
+  &__form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  &__form-title {
+    color: $title;
+    @extend %title-font;
+    line-height: 23px;
+    margin-bottom: 25px;
+  }
+
+  &__form-input {
+    border: 1px solid #DFDFDF;
+    border-radius: 20px;
+    padding: 6px 17px;
+    margin-bottom: 20px;
+    width: 48%;
+
+    &::placeholder {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 27px;
+      color: #A1A1A1;
+    }
+  }
+
+  &__form-btn {
+    padding: 6px 60px;
+    color: white;
+    background-color: $title;
+    border-radius: 21px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  &__form-label {
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #a1a1a1;
+  }
+
+  &__form-area {
+    border: 1px solid #DFDFDF;
+    border-radius: 24px;
+    width: 100%;
+    padding: 14px 17px;
+    min-height: 125px;
+    resize: none;
+    margin-bottom: 12px;
+
+    &::placeholder {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 27px;
+      color: #A1A1A1;
+    }
   }
 }
 
