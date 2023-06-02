@@ -5,6 +5,7 @@
 @import 'global';
 
 .header {
+  height: 120px;
   &__inner {
     display: flex;
     justify-content: space-between;
@@ -17,6 +18,10 @@
     padding: 0;
     border: none;
     cursor: pointer;
+  }
+
+  &__btn-menu {
+    display: none;
   }
 }
 
@@ -263,14 +268,19 @@
   position: relative;
   z-index: 10;
 
+  &__item {
+    position: relative;
+    padding-right: 8px;
+  }
+
   &__list {
     display: flex;
+    overflow: auto;
   }
 
   &__item::after {
     content: '/';
-    margin-left: -4px;
-    margin-right: 4px;
+    position: absolute;
   }
 
   &__item:last-child::after {
@@ -1328,3 +1338,4 @@
   }
 }
 
+@import "media";
