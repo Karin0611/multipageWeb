@@ -823,6 +823,9 @@
 .map {
   margin-top: -53px;
   margin-bottom: 50px;
+  iframe {
+    height: 578px;
+  }
 }
 
 .contact {
@@ -1109,7 +1112,7 @@
     color: inherit;
   }
   &__date,
-  &__athor {
+  &__author {
     color: #a1a1a1;
     font-size: 14px;
   }
