@@ -73,8 +73,8 @@ $(function () {
     });
 
     $('.article-slider__box').slick({
-        prevArrow: '<button type="button" className="article-slider__arrow article-slider__arrowleft"><img src="../images/icons/prev.svg" alt="arrow left"></button>',
-        nextArrow: '<button type="button" className="article-slider__arrow article-slider__arrowright"><img src = "../images/icons/next.svg" alt = "arrow right"></button>'
+        prevArrow: '<button type="button" class="article-slider__arrow article-slider__arrowleft"><img src="../images/icons/prev.svg" alt="arrow left"></button>',
+        nextArrow: '<button type="button" class="article-slider__arrow article-slider__arrowright"><img src = "../images/icons/next.svg" alt = "arrow right"></button>'
     });
 
     var mixer = mixitup('.gallery__inner', {
